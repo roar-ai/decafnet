@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description"
+    content="DeCafNet - A new approach for Efficient and Accurate Long Video Temporal Grounding">
+  <meta property="og:title" content="DeCafNet" />
+  <meta property="og:description"
+    content="DeCafNet - A new approach for Efficient and Accurate Long Video Temporal Grounding." />
+  <meta property="og:url" content="https://github.com/ZijiaLewisLu/CVPR2025-DeCafNet" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <!-- <meta property="og:image" content="static/images/decafnet_banner.png" /> -->
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="DeCafNet">
+  <meta name="twitter:description"
+    content="DeCafNet - A new approach for Efficient and Accurate Long Video Temporal Grounding.">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <!-- <meta name="twitter:image" content="static/images/decafnet_banner.png"> -->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Long Video Temporal Grounding, Efficient Video Processing, Delegate and Conquer, DeCafNet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>DeCafNet</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/decafnet-icon.ico"> -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">DeCafNet: Delegate and Conquer for Efficient Temporal Grounding in Long Videos</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://zijialewislu.github.io/" target="_blank">Zijia Lu</a><sup>1,2*</sup>,</span>
+              <span class="author-block">
+                <a href="https://sites.google.com/view/asmiftekhar/home" target="_blank">A S M Iftekhar</a><sup>1*</sup>,</span>
+              <span class="author-block">
+                <a href="https://g1910.github.io/" target="_blank">Gaurav Mittal</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://mengtianjian.github.io/" target="_blank">Tianjian Meng</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="[Link to Xiawei Wang]" target="_blank">Xiawei Wang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="[Link to Cheng Zhao]" target="_blank">Cheng Zhao</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="[Link to Rohith Kukkala]" target="_blank">Rohith Kukkala</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.khoury.northeastern.edu/home/eelhami/index.html" target="_blank">Ehsan Elhamifar</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="https://www.microsoft.com/en-us/research/people/meic/"
+                  target="_blank">Mei Chen</a><sup>1</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Microsoft,</span>
+              <span class="author-block"><sup>2</sup>Northeastern University</span>
+              <span class="eql-cntrb"><br><b>CVPR 2025</b></span>
+              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2505.16376" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://github.com/ZijiaLewisLu/CVPR2025-DeCafNet" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://roar-ai.github.io/" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>More from ROAR AI</span>
+                  </a>
+                </span>
+
+                <!-- Supplementary PDF link -->
+                <!-- <span class="link-block">
+                  <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Supplementary</span>
+                  </a>
+                </span> -->
+
+                <!-- Github link -->
+                <!-- <span class="link-block">
+                  <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span> -->
+
+                <!-- ArXiv abstract Link -->
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Teaser video-->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <center>
+          <img src="static/images/teaser-v2.png" class="center-image" alt="DeCafNet Teaser Image" />
+        </center>
+        <h2 class="subtitle has-text-centered">
+          <div class="content has-text-justified">
+            <!-- <p><strong>DeCafNet for Long Video Temporal Grounding (LVTG).</strong> Given a long untrimmed video and a text query, LVTG aims to retrieve the precise start and end times of the video segment that corresponds to the query. Existing methods often process all video clips with a computationally expensive expert encoder, leading to high costs for long videos. DeCafNet employs a 'delegate-and-conquer' strategy: a lightweight sidekick encoder quickly processes all clips to identify salient ones, which are then processed by the expert encoder. This significantly reduces computation while maintaining or improving performance. The example shows DeCafNet successfully grounding the query 'A person is cutting a green vegetable on a wooden cutting board' in a long cooking video.</p> -->
+            <p>
+            <strong>Long Video Temporal Grounding (LVTG)</strong> aims at identifying specific moments within long videos based on text queries. 
+            Existing approaches divide video into clips and process each clip via a full-scale expert encoder, creating prohibitive computational costs and is challenging to scale.
+            </p>
+
+            <p>
+            We introduce <strong>DeCafNet</strong>, an approach employing <strong>delegate-and-conquer</strong> strategy to achieve computation efficiency without sacrificing grounding performance. DeCafNet introduces a sidekick encoder that performs dense feature extraction over all video clips in a resource-efficient manner, while generating a saliency map to identify the most relevant clips for full processing by the expert encoder. To effectively leverage features from sidekick and expert encoders that exist at different temporal resolutions, we introduce <strong>DeCaf-Grounder</strong>, which unifies and refines them via query-aware temporal aggregation and multi-scale temporal refinement for accurate grounding. Experiments on five LTVG benchmark datasets demonstrate that DeCafNet reduces computation by up to <em>47%</em> while still outperforming existing methods. 
+            </p>
+              <!-- Our code is available at <a href="https://github.com/ZijiaLewisLu/CVPR2025-DeCafNet">https://github.com/ZijiaLewisLu/CVPR2025-DeCafNet</a>. -->
+          </div>
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <!-- Paper abstract -->
+  <!-- <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <center>
+              <img src="static/images/teaser-v2.png" class="center-image" alt="DeCafNet Teaser Image" />
+            </center>
+            <p>
+              Long Video Temporal Grounding (LVTG) aims at identifying specific moments within lengthy videos based on user-provided text queries for effective content retrieval. The approach taken by existing methods of dividing video into clips and processing each clip via a full-scale expert encoder is challenging to scale due to prohibitive computational costs of processing a large number of clips in long videos. To address this issue, we introduce DeCafNet, an approach employing ``delegate-and-conquer'' strategy to achieve computation efficiency without sacrificing grounding performance. DeCafNet introduces a sidekick encoder that performs dense feature extraction over all video clips in a resource-efficient manner, while generating a saliency map to identify the most relevant clips for full processing by the expert encoder. To effectively leverage features from sidekick and expert encoders that exist at different temporal resolutions, we introduce DeCaf-Grounder, which unifies and refines them via query-aware temporal aggregation and multi-scale temporal refinement for accurate grounding. Experiments on two LTVG benchmark datasets demonstrate that DeCafNet reduces computation by up to 47% while still outperforming existing methods, establishing a new state-of-the-art for LVTG in terms of both efficiency and performance. Our code is available at <a href="https://github.com/ZijiaLewisLu/CVPR2025-DeCafNet">https://github.com/ZijiaLewisLu/CVPR2025-DeCafNet</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- End paper abstract -->
+
+  <section class="section is-small hero is-light"> <!-- METHOD OVERVIEW -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div class="content">
+            <h2 class="title is-3 has-text-centered">Method Overview</h2>
+            <center>
+              <img src="static/images/model_overview_gm_v2.png" alt="DeCafNet Method Overview" class="center-image" />
+            </center>
+            <div class="level-set has-text-justified">
+              <p>
+                Our <strong>delegate-and-conquer</strong> strategy achieves both efficiency and accuracy in Long Video Temporal Grounding. 
+              </p>
+              <p>
+                Specifically, we introduce a <strong>sidekick</strong> encoder that is capable of extracting dense clip features at a substantially reduced computational cost. 
+                Simultaneously, a text encoder obtains features for the input text query. 
+                Next, we create a saliency map with the dense feature and text features to create a saliency map over the video clips and identify the top-c% salient clips for the input query. 
+                Lastly, we leverage a pretrained <strong>expert</strong> encoder to process only the salient clips to extract sparse, salient features. 
+              </p>
+
+              <p>
+                The dense features and the sparse salient features exist at different temporal resolutions. To ensure effective grounding, we introduce <strong>Decaf-Grounder</strong> that unifies the two features along with the input query features via Query-aware Temporal Aggregation and refines them over varied temporal scales using Multi-Scale Refinement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+  <section class="section is-small"> <!-- EXPERIMENTAL RESULTS -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div class="content">
+            <h2 class="title has-text-centered is-3">Experimental Results</h2>
+            <div id="results-carousel" class="carousel results-carousel">
+              <div class="item">
+                <img src="static/images/results/1.png" alt="DeCafNet Results on Ego4D-NLQ" class="center-image" />
+              </div>
+              <div class="item">
+                <img src="static/images/results/2.png" alt="DeCafNet Efficiency" class="center-image" style="height: 300px;" />
+              </div>
+              <div class="item">
+                <img src="static/images/results/3.png" alt="DeCafNet Results on Ego4D-Goalstep and MAD" class="center-image" />
+              </div>
+              <div class="item">
+                <img src="static/images/results/4.png" alt="DeCafNet Results on Charades-STG and TACoS" class="center-image" style="height: 400px;"/>
+              </div>  
+
+            </div>
+            <!-- <center>
+              <img src="static/images/decafnet_training_progress.png" alt="DeCafNet Performance Summary" class="center-image" />
+            </center> -->
+            <div class="level-set has-text-justified">
+              <p>
+              <strong>DeCafNet sets new SOTA on 5 temporal video grounding benchmarks</strong>, including Ego4D-NLQ, Ego4D-Goalstep, MAD, Charades-STG, and TACoS.
+              More importantly, <strong>it also significantly reduces computational costs.</strong> On Ego4D-NLQ, DeCafNet is close to the prior best when selecting 30% salient clips, reducing TFLOPS by 66%. DeCafNet surpasses the previous works when selecting 50% salient clips, while still reducing computation by 47%.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-small is-light"> <!-- QUALITATIVE -->
+    <div class="hero-body">
+      <div class="container  is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <div class="content">
+              <h2 class="title is-3 has-text-centered">Qualitative</h2>
+              <center>
+                <img src="static/images/qual_final.png" alt="DeCafNet Qualitative Results" class="center-image" />
+              </center>
+              <!-- <h2 class="subtitle has-text-centered"> -->
+              <div class="level-set has-text-justified">
+                <p>
+                  This figure presents qualitative results from our model, with saliency maps shown below our predictions. "Ours wo DCG" and "Ours w DCG" denote using conventional grounder design or our Decaf-Grounder design. We compare our results against SnAG. Notably, DeCafNet’s saliency maps are accurate and consistently align with the ground truth. Even when considering only the top 30% of salient clips, these clips still capture the ground truth, highlighting the effectiveness of our dual-encoder design. 
+                  As illustrated in the second row, predictions with conventional grounder design can be inaccurate as they do not handle inputs of varying temporal resolutions. Decaf-Grounder effectively corrects these inaccuracies.
+                </p>
+              </div>
+              <!-- </h2> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{
+        Lu2025DeCafNet,
+        title={DeCafNet: Delegate and Conquer for Efficient Temporal Grounding in Long Videos},
+        author={Zijia Lu and A S M Iftekhar and Gaurav Mittal and Tianjian Meng and Xiawei Wang and Cheng Zhao and Rohith Kukkala and Ehsan Elhamifar and Mei Chen},
+        booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+        year={2025},
+        }</code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the
+              footer. <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
